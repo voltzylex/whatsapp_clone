@@ -12,4 +12,9 @@ export 'package:whatsapp_clone/widgets/contacts_list.dart';
 export 'package:whatsapp_clone/widgets/web_profile_bar.dart';
 export 'package:whatsapp_clone/widgets/web_search_bar.dart';
 export 'package:whatsapp_clone/widgets/web_chat_appbar.dart';
+export 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
+export 'package:flutter/foundation.dart';
+
+export 'package:firebase_core/firebase_core.dart';
+export 'package:whatsapp_clone/firebase_options.dart';
 

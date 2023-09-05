@@ -1,8 +1,8 @@
-
-
 import 'package:whatsapp_clone/utils/imports.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Whatsapp UI',
       theme: ThemeData.dark().copyWith(
+        useMaterial3: true,
         scaffoldBackgroundColor: backgroundColor,
       ),
       home: const ResponsiveLayout(
