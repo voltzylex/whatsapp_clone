@@ -1,3 +1,4 @@
+import 'package:whatsapp_clone/features/landing/screens/landing_screen.dart';
 import 'package:whatsapp_clone/utils/imports.dart';
 
 void main() async {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
       ),
       home: const ResponsiveLayout(
-        mobileScreenLayout: MobileLayoutScreen(),
+        mobileScreenLayout:LandingScreen(), 
+        // MobileLayoutScreen(),
         webScreenLayout: WebLayoutScreen(),
       ),
     );
