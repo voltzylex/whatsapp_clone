@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/colors.dart';
 import 'package:whatsapp_clone/utils/assets.dart';
+import 'package:whatsapp_clone/common/widgets/custom_button.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -33,7 +34,10 @@ class LandingScreen extends StatelessWidget {
               'Read Our Privacy Policy. Tap "Agree and Continue" to accept the Terms and Service',
               textAlign: TextAlign.center,
               style: TextStyle(color: greyColor),
-            )
+            ),
+            SizedBox(height: size.height / 10),
+            CustomButton(
+                text: "Agree and Continue".toUpperCase(), ontap: () {}),
           ],
         ),
       ),
