@@ -14,7 +14,9 @@ export 'package:whatsapp_clone/widgets/web_search_bar.dart';
 export 'package:whatsapp_clone/widgets/web_chat_appbar.dart';
 export 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 export 'package:flutter/foundation.dart';
-
+export 'package:whatsapp_clone/widgets/custom_widgets.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:whatsapp_clone/firebase_options.dart';
+
+export 'package:whatsapp_clone/features/auth/screens/login_screen.dart';
 

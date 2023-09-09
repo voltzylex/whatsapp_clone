@@ -1,4 +1,5 @@
 import 'package:whatsapp_clone/features/landing/screens/landing_screen.dart';
+import 'package:whatsapp_clone/routers.dart';
 import 'package:whatsapp_clone/utils/imports.dart';
 
 void main() async {
@@ -16,11 +17,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Whatsapp UI',
       theme: ThemeData.dark().copyWith(
-        useMaterial3: true,
-        scaffoldBackgroundColor: backgroundColor,
-      ),
+          useMaterial3: true,
+          scaffoldBackgroundColor: backgroundColor,
+          appBarTheme: const AppBarTheme(backgroundColor: backgroundColor)),
+      onGenerateRoute: generatedRoutes,
       home: const ResponsiveLayout(
-        mobileScreenLayout:LandingScreen(), 
+        mobileScreenLayout: LandingScreen(),
         // MobileLayoutScreen(),
         webScreenLayout: WebLayoutScreen(),
       ),

@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/colors.dart';
+import 'package:whatsapp_clone/features/auth/screens/login_screen.dart';
 import 'package:whatsapp_clone/utils/assets.dart';
 import 'package:whatsapp_clone/common/widgets/custom_button.dart';
 
@@ -37,7 +39,13 @@ class LandingScreen extends StatelessWidget {
             ),
             SizedBox(height: size.height / 10),
             CustomButton(
-                text: "Agree and Continue".toUpperCase(), ontap: () {}),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                text: "Agree and Continue".toUpperCase(),
+                ontap: () {
+                  Navigator.pushNamed(
+                      context,LoginScreen.routeName
+                     );
+                }),
           ],
         ),
       ),
