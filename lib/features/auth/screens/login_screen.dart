@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Row(
               children: [
-                if (country != null) myText(text: '+91'),
+                if (country != null) myText(text: '+${country?.phoneCode}'),
                 const SizedBox(width: 10),
                 SizedBox(
                     width: size.width * 0.75,
