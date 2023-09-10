@@ -1,8 +1,4 @@
-
-
 import 'package:whatsapp_clone/utils/imports.dart';
-
-
 
 class WebLayoutScreen extends StatelessWidget {
   const WebLayoutScreen({Key? key}) : super(key: key);
@@ -13,10 +9,10 @@ class WebLayoutScreen extends StatelessWidget {
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
+          const Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: const [
+                children: [
                   WebProfileBar(),
                   WebSearchBar(),
                   ContactsList(),

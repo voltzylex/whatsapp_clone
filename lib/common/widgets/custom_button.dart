@@ -29,7 +29,8 @@ class CustomButton extends StatelessWidget {
           backgroundColor: tabColor,
           minimumSize: const Size(double.infinity, 50),
           // fixedSize: Size(width ?? 250, height ?? 50),
-          shape: const ContinuousRectangleBorder(),
+          shape: ContinuousRectangleBorder(
+              borderRadius: BorderRadius.circular(10)),
         ),
       ),
     );

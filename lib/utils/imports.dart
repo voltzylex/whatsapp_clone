@@ -17,6 +17,6 @@ export 'package:flutter/foundation.dart';
 export 'package:whatsapp_clone/widgets/custom_widgets.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:whatsapp_clone/firebase_options.dart';
-
+export 'package:country_picker/country_picker.dart';
 export 'package:whatsapp_clone/features/auth/screens/login_screen.dart';
 

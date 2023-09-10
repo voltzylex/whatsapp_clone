@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
           useMaterial3: true,
           scaffoldBackgroundColor: backgroundColor,
-          appBarTheme: const AppBarTheme(backgroundColor: backgroundColor)),
+          appBarTheme: const AppBarTheme(color: appBarColor)),
       onGenerateRoute: generatedRoutes,
       home: const ResponsiveLayout(
         mobileScreenLayout: LandingScreen(),
