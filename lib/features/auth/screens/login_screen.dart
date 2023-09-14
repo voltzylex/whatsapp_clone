@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 if (country != null) myText(text: '+${country?.phoneCode}'),
                 const SizedBox(width: 10),
-                SizedBox( dfgssg
+                SizedBox( 
                     width: size.width * 0.75,
                     child: myTextField(
                         controller: phoneController, hint: "Phone number")),
