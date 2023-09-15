@@ -1,17 +1,16 @@
-import 'dart:developer';
-
-import 'package:whatsapp_clone/common/widgets/custom_button.dart';
+import 'package:whatsapp_clone/features/auth/controller/auth_controller.dart';
 import 'package:whatsapp_clone/utils/imports.dart';
+import 'package:whatsapp_clone/utils/utils.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   static const routeName = "/login-screen";
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   TextEditingController phoneController = TextEditingController();
   Country? country;
   @override
@@ -48,16 +47,18 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 if (country != null) myText(text: '+${country?.phoneCode}'),
                 const SizedBox(width: 10),
-                SizedBox( 
+                SizedBox(
                     width: size.width * 0.75,
                     child: myTextField(
-                        controller: phoneController, hint: "Phone number")),
+                      controller: phoneController,
+                      hint: "Phone number",
+                    )),
               ],
             ),
             const Spacer(),
             CustomButton(
                 text: "Next".toUpperCase(),
-                ontap: () {},
+                ontap: sendPhoneNumber,
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.3)),
             const SizedBox(
               height: 20,
@@ -87,6 +88,20 @@ class _LoginScreenState extends State<LoginScreen> {
   void dispose() {
     super.dispose();
     phoneController.dispose();
+  }
+
+  void sendPhoneNumber() {
+    String phoneNumber = phoneController.text.trim();
+    log(phoneNumber + country!.phoneCode);
+    if (country != null && phoneNumber.isNotEmpty) {
+      ref
+          .read(authControllerProvider)
+          .signInWithPhonenumber(context, "+${country!.phoneCode}$phoneNumber");
+      log("+${country!.phoneCode}$phoneNumber");
+      return;
+    } else {
+      showSnackBar(ctx: context, content: "Fill Out all the fields");
+    }
   }
 }
 // very tired

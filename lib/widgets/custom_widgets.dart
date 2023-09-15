@@ -12,12 +12,13 @@ Text myText({required String text, FontWeight? fontWeight, double? size}) {
 
 // myTextField
 TextField myTextField({
-  required TextEditingController controller,String? hint = "",
-   
+  required TextEditingController controller,
+  String? hint = "",
 }) {
   return TextField(
+    controller: controller,
     decoration: InputDecoration(
-      hintText: hint
+      hintText: hint,
     ),
   );
 }
