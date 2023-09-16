@@ -12,6 +12,7 @@ class LandingScreen extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
+        bottom: true,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

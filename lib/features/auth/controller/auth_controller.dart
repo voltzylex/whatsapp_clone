@@ -17,4 +17,11 @@ class AuthController {
     authRepository.signInWithPhoneNumber(
         ctx: context, phoneNumber: phoneNumber);
   }
+
+  // Sing in with otp
+  void VerifyOtp(
+      BuildContext context, String verificationNumber, String userOtp) {
+    authRepository.verifyOTP(
+        context: context, verificationId: verificationNumber, userOtp: userOtp);
+  }
 }
