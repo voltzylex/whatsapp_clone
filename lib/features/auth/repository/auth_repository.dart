@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:whatsapp_clone/features/auth/screens/otp_screen.dart';
@@ -12,6 +14,23 @@ class AuthRepository {
   final FirebaseAuth auth;
   final FirebaseFirestore storage;
   AuthRepository({required this.auth, required this.storage});
+  // Save user data to firebase
+  void saveUserDataToFirebase(
+      {required String name,
+      required File? profilePicture,
+      required ProviderRef ref,
+      required BuildContext context}) async {
+    try {
+      String uid = auth.currentUser!.uid;
+      String photoUrl = Assets.demoIageUrl;
+      if(profilePicture!= null){
+        
+      }
+    } catch (e) {
+      showSnackBar(ctx: context, content: e.toString());
+    }
+  }
+
   // Sign in with phone number
   void signInWithPhoneNumber(
       {String? phoneNumber, required BuildContext ctx}) async {

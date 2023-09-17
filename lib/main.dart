@@ -1,4 +1,4 @@
-import 'package:whatsapp_clone/features/landing/screens/landing_screen.dart';
+import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
 import 'package:whatsapp_clone/routers.dart';
 import 'package:whatsapp_clone/utils/imports.dart';
 
@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(color: appBarColor)),
       onGenerateRoute: generatedRoutes,
       home: const ResponsiveLayout(
-        mobileScreenLayout: LandingScreen(),
+        // default is landingScreen()
+        mobileScreenLayout: UserInfomationScreen(),
         // MobileLayoutScreen(),
         webScreenLayout: WebLayoutScreen(),
       ),
