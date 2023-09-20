@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:whatsapp_clone/common/repositories/common_firebase_repositories.dart';
 import 'package:whatsapp_clone/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
 import 'package:whatsapp_clone/utils/imports.dart';
@@ -23,8 +24,11 @@ class AuthRepository {
     try {
       String uid = auth.currentUser!.uid;
       String photoUrl = Assets.demoIageUrl;
-      if(profilePicture!= null){
-        
+      // when profile is not null the storefiletofirebase function will called and saved the profile image to the firbase and return a image url
+      if (profilePicture != null) {
+         photoUrl =  await   ref
+            .read(commonfirebaseStorageRepositoryProvider)
+            .storeFilesToFirebase('profilePic/$uid', profilePicture);
       }
     } catch (e) {
       showSnackBar(ctx: context, content: e.toString());

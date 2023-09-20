@@ -1,6 +1,10 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:whatsapp_clone/utils/imports.dart';
 
+final commonfirebaseStorageRepositoryProvider = Provider((ref) =>
+    CommonFirebaseStorageRepositories(
+        firebaseStorage: FirebaseStorage.instance));
+
 class CommonFirebaseStorageRepositories {
   final FirebaseStorage firebaseStorage;
   CommonFirebaseStorageRepositories({required this.firebaseStorage});
